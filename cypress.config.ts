@@ -1,5 +1,6 @@
 import { defineConfig } from 'cypress';
-import viteConfig from './vite.config';
+// import viteConfig from './vite.config';
+import viteProcesser from 'cypress-vite';
 
 export default defineConfig({
   component: {
@@ -7,7 +8,7 @@ export default defineConfig({
     devServer: {
       framework: 'react',
       bundler: 'vite',
-      viteConfig,
+      // viteConfig,
     },
   },
 
@@ -15,6 +16,8 @@ export default defineConfig({
     baseUrl: 'http://localhost:3001',
     setupNodeEvents(on, config) {
       // implement node event listeners here
+      on('file:preprocessor', viteProcesser()); 
+      return config;
     },
   },
 });
