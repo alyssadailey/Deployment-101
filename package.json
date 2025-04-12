@@ -2,6 +2,8 @@
   "name": "coding-quiz",
   "version": "1.0.0",
   "description": "",
+
+
   "scripts": {
     "start": "cd server && npm run start",
     "seed": "cd server && npm run seed",
@@ -9,7 +11,7 @@
     "install": "cd server && npm i && cd ../client && npm i",
     "build": "concurrently \"cd server && npm run build\" \"cd client && npm run build\"",
     "render-build": "npm install && npm run build",
-    "test": "npx cypress run --browser electron",
+    "test": "npx cypress run-ct --browser electron",
     "test-component": "npx cypress run --component",
     "test-gui": "npx cypress open"
   },
